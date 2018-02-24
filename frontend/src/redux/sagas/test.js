@@ -1,8 +1,2 @@
-import { takeLatest } from 'redux-saga/effects'
-
-function* getTestSaga(action) {
-
-}
-
-const testSaga = [takeLatest('test', getTestSaga)]
+const testSaga = []
 export default testSaga

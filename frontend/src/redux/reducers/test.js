@@ -1,5 +1,3 @@
-const testReducer = (state = {}, action) => {
-  return state
-}
+const testReducer = (state = {}, action) => state
 
-export default testReducer;
+export default testReducer
