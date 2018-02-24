@@ -11,10 +11,12 @@ const SmallCard = ({ gameTitle, answer }) => {
       <Tilt
         className="Tilt br2 shadow-2 p-3 d-flex justify-content-center align-items-center"
         options={{ max: 55 }}
-        style={{ height: 150, minWidth: 150 }}
+        style={{ minHeight: 150, minWidth: 150 }}
       >
         <Link style={{ textDecoration: 'none' }} to={`/${gameTitle}/${answer.next}`}>
-          <h2 stype={{ overflowWrap: 'break-word' }}>{answer.text}</h2>
+          <h2 className="white" stype={{ overflowWrap: 'break-word' }}>
+            {answer.text} asfjas sahf9uhsauh hasf9hsahf saha9sfash asfiuahsf safihfsa asfihsafhsa0 sa0 a0hs0h0ha 0hsa
+          </h2>
         </Link>
       </Tilt>
     </div>
