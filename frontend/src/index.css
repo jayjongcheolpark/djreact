@@ -22,7 +22,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body {
   line-height: 1;
-  background: linear-gradient(to right, rgba(203,96,179,1) 0%, rgba(97,172,174,1) 36%, rgba(73,189,173,1) 44%, rgba(70,191,173,1) 45%, rgba(61,242,130,1) 71%, rgba(61,242,130,1) 86%, rgba(61,242,130,1) 100%); 
+  background-image: url('./components/background.jpg')
 }
 
 ol, ul {
