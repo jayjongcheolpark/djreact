@@ -36,7 +36,7 @@ class Card extends Component {
   }
   render() {
     if (this.state.redirect) {
-      return <Redirect to="/" />
+      return <Redirect to="/gameover" />
     }
     console.log(this.props.match.params.tableName, this.props.match.params.qNum)
     if (this.props.questions.length > 0) {
