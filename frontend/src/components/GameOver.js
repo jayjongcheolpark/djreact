@@ -42,7 +42,7 @@ const GameOver = () => (
       <div style={bg} />
       <div className="mt-5" style={code}>
         Game Over<br />
-        <Link className="btn btn-lg  text-lg btn-outline-light" to="/">
+        <Link style={{ color: 'papayawhip', fontSize: '0.5em' }} className="retry" to="/">
           Retry
         </Link>
       </div>
