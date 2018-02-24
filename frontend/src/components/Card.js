@@ -1,29 +1,29 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import _ from 'lodash'
 import BigCard from './BigCard'
-
-const questions = [
-  {
-    questionNumber: 1,
-    questionString: 'Which Way?',
-    answers: [
-      { text: 'North', next: 2, animation: 'fadeout', effect: -20 },
-      { text: 'East', next: 3, animation: 'fadeout', effect: -20 },
-      { text: 'South', next: 4, animation: 'fadeout', effect: -20 },
-      { text: 'West', next: 5, animation: 'fadeout', effect: -20 },
-    ],
-  },
-]
+import { getAllQuestionsByGameTitle } from '../redux/actions'
 
 class Card extends Component {
   state = {}
+  componentDidMount() {
+    console.log(this.props)
+    this.props.getAllQuestionsByGameTitle(this.props.match.params.tableName)
+  }
   render() {
     console.log(this.props.match.params.tableName, this.props.match.params.qNum)
-    return (
-      <div>
-        <BigCard gameTitle={this.props.match.params.tableName} question={questions[0]} />
-      </div>
-    )
+    if (this.props.questions.length > 0) {
+      console.log(this.props.questions)
+      const selectedQuestion = _.find(this.props.questions, { questionNumber: Number(this.props.match.params.qNum) })
+      console.log(selectedQuestion)
+      return (
+        <div>
+          <BigCard gameTitle={this.props.match.params.tableName} question={selectedQuestion} />
+        </div>
+      )
+    }
+    return <div />
   }
 }
 
@@ -34,6 +34,8 @@ Card.propTypes = {
       qNum: PropTypes.string,
     }).isRequired,
   }).isRequired,
+  getAllQuestionsByGameTitle: PropTypes.func.isRequired,
+  questions: PropTypes.array.isRequired,
 }
 
-export default Card
+export default connect(({ questions }) => ({ questions }), { getAllQuestionsByGameTitle })(Card)
