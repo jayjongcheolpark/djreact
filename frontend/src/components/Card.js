@@ -25,6 +25,10 @@ class Card extends Component {
 
   changeHealth = amount => {
     this.setState(Object.assign(this.state.data[0], { value: this.state.data[0].value + amount }))
+    if (this.state.data[0].value > 100) {
+      this.setState(Object.assign(this.state.data[0], { value: 100 }))
+    }
+    console.log(this.state.data[0].value)
   }
   render() {
     console.log(this.props.match.params.tableName, this.props.match.params.qNum)
