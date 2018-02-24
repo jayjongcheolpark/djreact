@@ -2711,7 +2711,7 @@ body.is-menu-visible #menu .close {
 /* Footer */
 
 #footer {
-  padding: 5em 0 6em 0;
+  padding: 1em 0 1em 0;
   background-color: #f6f6f6;
 }
 
@@ -2773,7 +2773,7 @@ body.is-menu-visible #menu .close {
 
 @media screen and (max-width: 1280px) {
   #footer {
-    padding: 5em 0 3em 0;
+    padding: 1em 0 1em 0;
   }
   #footer>.inner section:nth-child(1) {
     width: calc(66% - 1.25em);
@@ -2798,7 +2798,7 @@ body.is-menu-visible #menu .close {
 
 @media screen and (max-width: 736px) {
   #footer {
-    padding: 3em 0 1em 0;
+    padding: 1em 0 1em 0;
   }
   #footer>.inner {
     -moz-flex-direction: column;

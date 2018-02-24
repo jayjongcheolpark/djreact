@@ -59,12 +59,17 @@ class Main extends Component {
       <div id="wrapper">
         <div id="main">
           <div className="inner">
-            <header>
+            <header className="d-flex justify-content-center">
               <h1>Text based game</h1>
             </header>
             <section className="tiles">{this.renderStories()}</section>
           </div>
         </div>
+        <footer id="footer" className="d-flex justify-content-center">
+          <div className="copyright">
+            <div>&copy; Hack The Velley. All rights reserved</div>
+          </div>
+        </footer>
       </div>
     )
   }
