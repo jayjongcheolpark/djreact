@@ -11,7 +11,7 @@ const SmallCard = ({ gameTitle, answer }) => {
       <Tilt
         className="Tilt br2 shadow-2 p-3 d-flex justify-content-center align-items-center"
         options={{ max: 55 }}
-        style={{ height: 150 }}
+        style={{ height: 150, minWidth: 150 }}
       >
         <Link style={{ textDecoration: 'none' }} to={`/${gameTitle}/${answer.next}`}>
           <h2 stype={{ overflowWrap: 'break-word' }}>{answer.text}</h2>
