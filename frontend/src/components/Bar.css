@@ -31,3 +31,15 @@
     display: inline-block;
     border-radius: 3px 0 0 3px;
 }
+
+.bg {
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  opacity: 0.2;
+  z-index: -1;
+  position: absolute;
+  mix-blend-mode: overlay;
+  background-size: cover;
+}
