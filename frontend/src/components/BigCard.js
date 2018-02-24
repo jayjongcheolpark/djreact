@@ -8,7 +8,7 @@ import SmallCard from './SmallCard'
 
 const BigCard = ({ gameTitle, question }) => {
   const renderCards = () =>
-    question.answers.map(answer => <SmallCard key={answer.text} gameTitle={gameTitle} answer={answer} />)
+    question.answers.map((answer, idx) => <SmallCard key={answer.text} gameTitle={gameTitle} answer={answer} />)
   return (
     <div className="w-100 center">
       <main className="w-100">
