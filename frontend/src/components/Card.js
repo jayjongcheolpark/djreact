@@ -12,7 +12,7 @@ class Card extends Component {
 Card.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      tableName: PropTypes.tableName,
+      tableName: PropTypes.string,
       qNum: PropTypes.string,
     }).isRequired,
   }).isRequired,
