@@ -7,9 +7,7 @@ import './BigCard.css'
 import SmallCard from './SmallCard'
 
 const BigCard = ({ question }) => {
-  const renderCards = () => {
-    question.answers.map(answer => <SmallCard answer={answer} />)
-  }
+  const renderCards = () => question.answers.map(answer => <SmallCard answer={answer} />)
   return (
     <div className=" mv6 w-100 w-50-m w-25-l mw6 center">
       <main className="pa4 black-80">
