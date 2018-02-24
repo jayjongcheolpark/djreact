@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import Bars from 'react-bars'
 import _ from 'lodash'
@@ -10,6 +11,7 @@ import './Bar.css'
 
 const initialState = {
   data: [{ label: 'Health', value: 100, barColor: 'red' }],
+  redirect: false,
 }
 
 class Card extends Component {
@@ -27,10 +29,15 @@ class Card extends Component {
     this.setState(Object.assign(this.state.data[0], { value: this.state.data[0].value + amount }))
     if (this.state.data[0].value > 100) {
       this.setState(Object.assign(this.state.data[0], { value: 100 }))
+    } else if (this.state.data[0].value <= 0) {
+      this.setState({ redirect: true })
     }
     console.log(this.state.data[0].value)
   }
   render() {
+    if (this.state.redirect) {
+      return <Redirect to="/" />
+    }
     console.log(this.props.match.params.tableName, this.props.match.params.qNum)
     if (this.props.questions.length > 0) {
       console.log(this.props.questions)
