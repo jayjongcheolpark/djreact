@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Tilt from 'react-tilt'
 import PropTypes from 'prop-types'
-
+import { connect } from 'react-redux'
+import { changeHealth } from '../redux/actions'
 import './SmallCard.css'
 
 class SmallCard extends Component {
@@ -14,7 +15,6 @@ class SmallCard extends Component {
   }
 
   changeHealth() {
-    console.log(this.props.answer.effect)
     this.props.changeHealth(this.props.answer.effect)
   }
 
@@ -52,4 +52,4 @@ SmallCard.propTypes = {
   }).isRequired,
 }
 
-export default SmallCard
+export default connect(null, { changeHealth })(SmallCard)

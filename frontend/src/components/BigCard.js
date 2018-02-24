@@ -6,11 +6,9 @@ import 'tachyons'
 import './BigCard.css'
 import SmallCard from './SmallCard'
 
-const BigCard = ({ gameTitle, changeHealth, question }) => {
+const BigCard = ({ gameTitle, question }) => {
   const renderCards = () =>
-    question.answers.map((answer, idx) => (
-      <SmallCard key={answer.text} changeHealth={changeHealth} gameTitle={gameTitle} answer={answer} />
-    ))
+    question.answers.map((answer, idx) => <SmallCard key={answer.text} gameTitle={gameTitle} answer={answer} />)
   return (
     <div className="w-100 center">
       <main className="w-100">
@@ -34,7 +32,6 @@ const BigCard = ({ gameTitle, changeHealth, question }) => {
 
 BigCard.propTypes = {
   gameTitle: PropTypes.string.isRequired,
-  changeHealth: PropTypes.func.isRequired,
   question: PropTypes.shape({
     answers: PropTypes.array,
   }).isRequired,
