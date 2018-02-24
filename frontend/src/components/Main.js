@@ -1,45 +1,19 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import Story from './Story'
-
-const stories = [
-  {
-    styleNum: 'style1',
-    gameTitle: 'crime',
-    description: 'Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.',
-  },
-  {
-    styleNum: 'style2',
-    gameTitle: 'crime',
-    description: 'Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.',
-  },
-  {
-    styleNum: 'style3',
-    gameTitle: 'crime',
-    description: 'Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.',
-  },
-  {
-    styleNum: 'style4',
-    gameTitle: 'crime',
-    description: 'Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.',
-  },
-  {
-    styleNum: 'style5',
-    gameTitle: 'crime',
-    description: 'Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.',
-  },
-  {
-    styleNum: 'style6',
-    gameTitle: 'crime',
-    description: 'Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.',
-  },
-]
+import { getAllGameTitles } from '../redux/actions'
 
 class Main extends Component {
   state = {}
 
+  componentDidMount() {
+    this.props.getAllGameTitles()
+  }
+
   renderStories = () =>
-    stories.map((story, idx) => (
-      <Story key={story.styleNum} num={idx % 6 + 1} gameTitle={story.gameTitle} description={story.description} />
+    this.props.games.map((story, idx) => (
+      <Story key={story.gameTitle} num={idx % 6 + 1} gameTitle={story.gameTitle} description={story.description} />
     ))
 
   render() {
@@ -63,4 +37,9 @@ class Main extends Component {
   }
 }
 
-export default Main
+Main.propTypes = {
+  getAllGameTitles: PropTypes.func.isRequired,
+  games: PropTypes.array.isRequired,
+}
+
+export default connect(({ games }) => ({ games }), { getAllGameTitles })(Main)
