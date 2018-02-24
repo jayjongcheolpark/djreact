@@ -1,15 +1,30 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import Bars from 'react-bars'
 import _ from 'lodash'
 import BigCard from './BigCard'
 import { getAllQuestionsByGameTitle } from '../redux/actions'
 
+import './Bar.css'
+
+const initialState = {
+  data: [{ label: 'Health', value: 100, barColor: 'red' }],
+}
+
 class Card extends Component {
-  state = {}
+  constructor() {
+    super()
+    this.state = initialState
+  }
+
   componentDidMount() {
     console.log(this.props)
     this.props.getAllQuestionsByGameTitle(this.props.match.params.tableName)
+  }
+
+  changeHealth = amount => {
+    this.setState(Object.assign(this.state.data[0], { value: this.state.data[0].value + amount }))
   }
   render() {
     console.log(this.props.match.params.tableName, this.props.match.params.qNum)
@@ -19,7 +34,14 @@ class Card extends Component {
       console.log(selectedQuestion)
       return (
         <div>
-          <BigCard gameTitle={this.props.match.params.tableName} question={selectedQuestion} />
+          <div className="bar-label bar-suffix bar-contain bar-expand">
+            <Bars data={this.state.data} makeUppercase />
+          </div>
+          <BigCard
+            gameTitle={this.props.match.params.tableName}
+            changeHealth={this.changeHealth}
+            question={selectedQuestion}
+          />
         </div>
       )
     }

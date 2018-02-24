@@ -1,0 +1,33 @@
+.bar-label {
+    color: white;
+    font: 15px 'opensans-bold', sans-serif;
+    letter-spacing: 2px;
+    font-weight: bold;
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+.bar-suffix {
+  display: inline-block;
+    color: black;
+    font: 15px 'opensans-bold', sans-serif;
+    letter-spacing: 2px;
+    font-weight: bold;
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+.bar-contain {
+  color: white;
+    width: 90%;
+    padding: 0;
+    display: inline-block; 
+    border-radius: 3px;
+}
+
+.bar-expand {
+    display: inline-block;
+    border-radius: 3px 0 0 3px;
+}
