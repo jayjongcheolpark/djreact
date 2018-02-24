@@ -15,7 +15,7 @@ const SmallCard = ({ gameTitle, answer }) => {
       >
         <Link style={{ textDecoration: 'none' }} to={`/${gameTitle}/${answer.next}`}>
           <h2 className="white" stype={{ overflowWrap: 'break-word' }}>
-            {answer.text} asfjas sahf9uhsauh hasf9hsahf saha9sfash asfiuahsf safihfsa asfihsafhsa0 sa0 a0hs0h0ha 0hsa
+            {answer.text}
           </h2>
         </Link>
       </Tilt>
