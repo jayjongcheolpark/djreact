@@ -14,7 +14,12 @@ const BigCard = ({ gameTitle, question }) => {
       <main className="w-100">
         <div className="">
           <fieldset id="sign_up" className="text-center center">
-            <legend className="f1 fw6 ph0 mh0">{question.questionString}</legend>
+            <legend
+              style={{ color: 'lightgray', textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black' }}
+              className="f1 fw6 ph0 mh0"
+            >
+              {question.questionString}
+            </legend>
             <div className="center mt-5">
               <div className="form shadow-5 d-flex justify-content-center flex-wrap flex-row">{renderCards()}</div>
             </div>
