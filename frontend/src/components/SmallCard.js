@@ -12,10 +12,21 @@ class SmallCard extends Component {
     this.state = {}
 
     this.changeHealth = this.changeHealth.bind(this)
+    this.changeImageEffect = this.changeImageEffect.bind(this)
   }
 
   changeHealth() {
     this.props.changeHealth(this.props.answer.effect)
+  }
+
+  changeImageEffect() {
+    console.log(this.props.answer.animation)
+    this.props.changeImageEffect(this.props.answer.animation)
+  }
+
+  funcCombo = () => {
+    this.changeHealth()
+    this.changeImageEffect()
   }
 
   render() {
@@ -29,7 +40,7 @@ class SmallCard extends Component {
           <Link
             style={{ textDecoration: 'none' }}
             to={`/${this.props.gameTitle}/${this.props.answer.next}`}
-            onClick={this.changeHealth}
+            onClick={this.funcCombo}
           >
             <h2 className="white" stype={{ overflowWrap: 'break-word' }}>
               {this.props.answer.text}
@@ -44,6 +55,7 @@ class SmallCard extends Component {
 SmallCard.propTypes = {
   gameTitle: PropTypes.string.isRequired,
   changeHealth: PropTypes.func.isRequired,
+  changeImageEffect: PropTypes.func.isRequired,
   answer: PropTypes.shape({
     text: PropTypes.string,
     next: PropTypes.number,

@@ -34,6 +34,7 @@ BigCard.propTypes = {
   question: PropTypes.shape({
     answers: PropTypes.array,
   }).isRequired,
+  changeImageEffect: PropTypes.func.isRequired,
 }
 
 export default BigCard
