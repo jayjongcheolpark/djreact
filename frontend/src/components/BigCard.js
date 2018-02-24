@@ -15,7 +15,7 @@ const BigCard = ({ gameTitle, question }) => {
           <fieldset id="sign_up" className="ba b--transparent ph0 mh0 center tc">
             <legend className="f1 fw6 ph0 mh0">{question.questionString}</legend>
             <div className="center">
-              <div className="form center pa4 br3 shadow-5">{renderCards()}</div>
+              <div className="form shadow-5">{renderCards()}</div>
             </div>
           </fieldset>
         </div>
