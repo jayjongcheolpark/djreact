@@ -10,13 +10,13 @@ const BigCard = ({ gameTitle, question }) => {
   const renderCards = () =>
     question.answers.map(answer => <SmallCard key={answer.text} gameTitle={gameTitle} answer={answer} />)
   return (
-    <div className="w-100 w-50-m w-25-l mw6 center">
-      <main className="pa4 black-80">
-        <div className="measure">
-          <fieldset id="sign_up" className="ba b--transparent ph0 mh0 center tc">
+    <div className="w-100 center">
+      <main className="w-100">
+        <div className="">
+          <fieldset id="sign_up" className="text-center center">
             <legend className="f1 fw6 ph0 mh0">{question.questionString}</legend>
-            <div className="center">
-              <div className="form shadow-5">{renderCards()}</div>
+            <div className="center mt-5">
+              <div className="form shadow-5 d-flex justify-content-center flex-wrap flex-row">{renderCards()}</div>
             </div>
           </fieldset>
         </div>
