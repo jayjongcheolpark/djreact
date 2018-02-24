@@ -1315,7 +1315,6 @@ a {
 }
 
 a:hover {
-  border-bottom-color: transparent;
   color: #f2849e !important;
 }
 
@@ -2852,4 +2851,8 @@ body.is-menu-visible #menu .close {
   #wrapper>*>.inner {
     padding: 0 1.25em;
   }
+}
+
+.retry:hover {
+  text-decoration: none;
 }
