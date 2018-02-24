@@ -8,9 +8,9 @@ const questions = [
     questionString: 'Which Way?',
     answers: [
       { text: 'North', next: 2, animation: 'fadeout', effect: -20 },
-      { text: 'East', next: 2, animation: 'fadeout', effect: -20 },
-      { text: 'South', next: 2, animation: 'fadeout', effect: -20 },
-      { text: 'West', next: 2, animation: 'fadeout', effect: -20 },
+      { text: 'East', next: 3, animation: 'fadeout', effect: -20 },
+      { text: 'South', next: 4, animation: 'fadeout', effect: -20 },
+      { text: 'West', next: 5, animation: 'fadeout', effect: -20 },
     ],
   },
 ]
@@ -21,7 +21,7 @@ class Card extends Component {
     console.log(this.props.match.params.tableName, this.props.match.params.qNum)
     return (
       <div>
-        <BigCard question={questions[0]} />
+        <BigCard gameTitle={this.props.match.params.tableName} question={questions[0]} />
       </div>
     )
   }
