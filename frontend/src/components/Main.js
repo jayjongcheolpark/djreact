@@ -4,37 +4,31 @@ import Story from './Story'
 const stories = [
   {
     styleNum: 'style1',
-    image: 'pic01.jpg',
     gameTitle: 'crime',
     description: 'Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.',
   },
   {
     styleNum: 'style2',
-    image: 'pic02.jpg',
     gameTitle: 'crime',
     description: 'Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.',
   },
   {
     styleNum: 'style3',
-    image: 'pic03.jpg',
     gameTitle: 'crime',
     description: 'Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.',
   },
   {
     styleNum: 'style4',
-    image: 'pic04.jpg',
     gameTitle: 'crime',
     description: 'Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.',
   },
   {
     styleNum: 'style5',
-    image: 'pic05.jpg',
     gameTitle: 'crime',
     description: 'Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.',
   },
   {
     styleNum: 'style6',
-    image: 'pic06.jpg',
     gameTitle: 'crime',
     description: 'Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.',
   },
@@ -44,14 +38,8 @@ class Main extends Component {
   state = {}
 
   renderStories = () =>
-    stories.map(story => (
-      <Story
-        key={story.styleNum}
-        styleNum={story.styleNum}
-        image={story.image}
-        gameTitle={story.gameTitle}
-        description={story.description}
-      />
+    stories.map((story, idx) => (
+      <Story key={story.styleNum} num={idx % 6 + 1} gameTitle={story.gameTitle} description={story.description} />
     ))
 
   render() {
