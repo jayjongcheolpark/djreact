@@ -9,7 +9,7 @@ import SmallCard from './SmallCard'
 const BigCard = ({ gameTitle, question }) => {
   const renderCards = () => question.answers.map(answer => <SmallCard gameTitle={gameTitle} answer={answer} />)
   return (
-    <div className=" mv6 w-100 w-50-m w-25-l mw6 center">
+    <div className="w-100 w-50-m w-25-l mw6 center">
       <main className="pa4 black-80">
         <div className="measure">
           <fieldset id="sign_up" className="ba b--transparent ph0 mh0 center tc">
