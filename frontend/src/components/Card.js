@@ -10,6 +10,9 @@ import { getAllQuestionsByGameTitle, retryGame } from '../redux/actions'
 import './Bar.css'
 
 class Card extends Component {
+  state = {
+    imageEffect: null,
+  }
   componentDidMount() {
     console.log(this.props)
     this.props.getAllQuestionsByGameTitle(this.props.match.params.tableName)
@@ -49,8 +52,12 @@ class Card extends Component {
           <div className="bar-label bar-suffix bar-contain bar-expand">
             <Bars data={[this.props.health.data]} makeUppercase />
           </div>
-          <BigCard gameTitle={this.props.match.params.tableName} question={selectedQuestion} changeImageEffect={this.changeImageEffect} />
-         {effImg}
+          <BigCard
+            gameTitle={this.props.match.params.tableName}
+            question={selectedQuestion}
+            changeImageEffect={this.changeImageEffect}
+          />
+          {effImg}
         </div>
       )
     }
