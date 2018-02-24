@@ -22,7 +22,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body {
   line-height: 1;
-  background: linear-gradient(to right, rgba(248,80,50,1) 0%, rgba(12,245,36,1) 0%, rgba(5,1,0,1) 71%, rgba(231,56,39,1) 100%);
 }
 
 ol, ul {
@@ -1270,6 +1269,10 @@ body {
   html, body {
     min-width: 320px;
   }
+}
+
+body {
+  background: #ffffff;
 }
 
 body.is-loading *, body.is-loading *:before, body.is-loading *:after {
