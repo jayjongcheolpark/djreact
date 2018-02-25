@@ -1,21 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Rectangle, Circle, Ellipse, Line, Polyline, CornerBox, Triangle } from 'react-shapes'
 import 'tachyons'
 
 import './BigCard.css'
 import SmallCard from './SmallCard'
 
-const BigCard = ({ gameTitle, changeHealth, question, changeImageEffect }) => {
+const BigCard = ({ gameTitle, question, changeImageEffect }) => {
   const renderCards = () =>
-    question.answers.map((answer, idx) => (
-      <SmallCard
-        key={answer.text}
-        changeHealth={changeHealth}
-        gameTitle={gameTitle}
-        answer={answer}
-        changeImageEffect={changeImageEffect}
-      />
+    question.answers.map(answer => (
+      <SmallCard key={answer.text} gameTitle={gameTitle} answer={answer} changeImageEffect={changeImageEffect} />
     ))
   return (
     <div className="w-100 center">
@@ -40,11 +33,10 @@ const BigCard = ({ gameTitle, changeHealth, question, changeImageEffect }) => {
 
 BigCard.propTypes = {
   gameTitle: PropTypes.string.isRequired,
-  changeHealth: PropTypes.func.isRequired,
-  changeImageEffect: PropTypes.func.isRequired,
   question: PropTypes.shape({
     answers: PropTypes.array,
   }).isRequired,
+  changeImageEffect: PropTypes.func.isRequired,
 }
 
 export default BigCard

@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Particles from 'react-particles-js'
 import Main from './Main'
 import Card from './Card'
+import GameOver from './GameOver'
 import './App.css'
 
 const particleOptions = {
@@ -26,6 +27,7 @@ class App extends Component {
           <Particles className="particles" params={particleOptions} />
           <Switch>
             <Route exact path="/" component={Main} />
+            <Route exact path="/gameover" component={GameOver} />
             <Route exact path="/:tableName/:qNum" component={Card} />
           </Switch>
         </div>
