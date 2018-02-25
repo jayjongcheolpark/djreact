@@ -28,52 +28,35 @@ export const getAllGameTitles = () => [
 export const getAllQuestionsByGameTitle = gameTitle => [
   {
     questionNumber: 1,
-    questionString: 'Which Way?',
+    questionString:
+      'You find yourself stranded on an island. It has an eerie feel to it. Something feels unsettling to you. Off in the distance you see a path that leads into the wilderness.',
     answers: [
-      { text: 'North', next: 2, animation: 'health', effect: 20 },
-      { text: 'East', next: 2, animation: 'water', effect: -20 },
-      { text: 'South', next: 3, animation: 'dark', effect: -20 },
-      { text: 'West', next: 3, animation: 'fire', effect: -20 },
+      { text: 'Sit tight', next: 2, animation: 'health', effect: -100 },
+      { text: 'Into the wilderness', next: 3, animation: 'water', effect: -20 },
     ],
   },
   {
     questionNumber: 2,
-    questionString: 'Where you go?',
-    answers: [
-      { text: 'North', next: 4, animation: 'health', effect: 20 },
-      { text: 'East', next: 4, animation: 'fire', effect: -20 },
-      { text: 'South', next: 5, animation: 'fadeout', effect: -20 },
-      { text: 'West', next: 5, animation: 'fadeout', effect: -20 },
-    ],
+    questionString: 'You die of boredom and starvation',
+    answers: [],
   },
   {
     questionNumber: 3,
-    questionString: 'Which direction do you want?',
+    questionString:
+      'You venture into the wilderness. You hear the sounds of birds chirping, insects hissing. The vast diversity of the place wonders you. Suddenly, as you walk along the trail, you see the path diverges, one leading to a cave and another leading to a waterfall.',
     answers: [
-      { text: 'North', next: 4, animation: 'fadeout', effect: 20 },
-      { text: 'East', next: 4, animation: 'fadeout', effect: -20 },
-      { text: 'South', next: 4, animation: 'fadeout', effect: -20 },
-      { text: 'West', next: 4, animation: 'fadeout', effect: -20 },
+      { text: 'Cave', next: 5, animation: 'fadeout', effect: -100 },
+      { text: 'Waterfall', next: 4, animation: 'fadeout', effect: -100 },
     ],
   },
   {
     questionNumber: 4,
-    questionString: 'What do you want to do?',
-    answers: [
-      { text: 'Eat', next: 5, animation: 'fadeout', effect: 20 },
-      { text: 'Play', next: 5, animation: 'fadeout', effect: -20 },
-      { text: 'Pray', next: 5, animation: 'fadeout', effect: -20 },
-      { text: 'Drink', next: 5, animation: 'fadeout', effect: -20 },
-    ],
+    questionString: 'You fall into the waterfall and you drown.',
+    answers: [],
   },
   {
     questionNumber: 5,
-    questionString: 'The end',
-    answers: [
-      { text: 'The end1', next: 1, animation: 'fadeout', effect: 20 },
-      { text: 'The end2', next: 1, animation: 'fadeout', effect: -20 },
-      { text: 'The end3', next: 1, animation: 'fadeout', effect: -20 },
-      { text: 'The end4', next: 1, animation: 'fadeout', effect: -20 },
-    ],
+    questionString: 'You walk in, the cave collapses and you die.',
+    answers: [],
   },
 ]
