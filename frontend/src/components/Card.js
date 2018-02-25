@@ -41,7 +41,9 @@ class Card extends Component {
   }
   render() {
     if (this.state.redirect) {
-      this.setState(initialState)
+      
+      console.log('reset')
+      console.log(this.state.data[0].value)
       return <Redirect to="/" />
     }
 
@@ -67,7 +69,7 @@ class Card extends Component {
       return (
         <div>
           <div className="bar-label bar-suffix bar-contain bar-expand">
-            <Bars data={this.state.data} makeUppercase />
+            {/*<Bars data={this.state.data} makeUppercase />*/}
           </div>
           <BigCard
             gameTitle={this.props.match.params.tableName}
@@ -75,7 +77,7 @@ class Card extends Component {
             question={selectedQuestion}
             changeImageEffect={this.changeImageEffect}
           />
-          {effImg}
+          {/*effImg*/}
         </div>
       )
     }
