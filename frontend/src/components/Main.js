@@ -9,6 +9,11 @@ class Main extends Component {
 
   componentDidMount() {
     this.props.getAllGameTitles()
+    fetch('https://stories-api-prod.herokuapp.com/api/stories/')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+      })
   }
 
   renderStories = () =>
